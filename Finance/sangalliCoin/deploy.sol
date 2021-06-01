@@ -1,3 +1,3 @@
-import "./sangalliCoin.sol";
+import "./axoCoin.sol";
 import "./market.sol";
-contract deploy is sangalliCoin, market { function() { revert(); } }
+contract deploy is axoCoin, market { function() { revert(); } }
