@@ -1,5 +1,5 @@
-# Learn solidity with examples!
-A repo full of smart contracts written in Solidity. This repo is intended to be used for education. Anyone is free to use it as they wish and make suggestions and/or pull requests.
+# Solidity Examples
+A repo of smart contracts written in Solidity. This repo is intended to be used for education. Anyone is free to use it as they wish and make suggestions and/or pull requests.
 
 ### Finance
 This directory contains all smart contracts related to financial applications such as atomic swap trading, cross chain swaps and other instruments
