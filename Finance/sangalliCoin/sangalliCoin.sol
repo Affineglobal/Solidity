@@ -1,11 +1,11 @@
-contract sangalliCoin {
+ contract axoCoin {
 
-  address sangalli;
+  address axo;
   mapping (address => uint) balances;
   uint256 id;
   uint256 cap;
 
-  modifier sangalliOnly{ if(msg.sender != sangalli) throw; _ }
+  modifier axoOnly{ if(msg.sender != axo) throw; _ }
   modifier noEther { if(msg.value > 0) throw; _ }
   event _attemptWithdrawal(uint256 indexed amount, address indexed customer, uint256 withdrawalId);
   event _denyWithdrawal(uint256 indexed id, address indexed customer, uint256 indexed amount);
@@ -31,18 +31,18 @@ contract sangalliCoin {
   function attemptWithdrawal(uint256 amount) noEther returns (string){
      if(balances[msg.sender] >= amount){
         _attemptWithdrawal(amount, msg.sender, id++);
-        return "Withdrawal attempted... #sangalliCoin";
+        return "Withdrawal attempted... #axoCoin";
      }
      else{
         _attemptWithdrawal(amount, msg.sender, 404);
-        return "Insufficient balance #sangalliCoin";
+        return "Insufficient balance #axoCoin";
      }
   }
 
-  function sangalliCoin(uint256 limitOnFunds)
+  function axoCoin(uint256 limitOnFunds)
   {
       cap = limitOnFunds;
-      sangalli = msg.sender;
+      axo = msg.sender;
       id = 0;
   }
 
@@ -58,7 +58,7 @@ contract sangalliCoin {
   function withdraw(uint withdrawAmount,
     address user,
     uint256 penalty,
-    uint256 successfulId) sangalliOnly noEther
+    uint256 successfulId) axoOnly noEther
     returns (uint remainingBal) {
         if(balances[user] >= withdrawAmount + penalty) {
             balances[user] -= withdrawAmount + penalty;
@@ -70,7 +70,7 @@ contract sangalliCoin {
         return balances[msg.sender];
     }
 
-    function goBust() sangalliOnly {
-      selfdestruct(sangalli);
+    function goBust() axoOnly {
+      selfdestruct(axo);
     }
 }
