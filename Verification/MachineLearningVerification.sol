@@ -1,5 +1,4 @@
-/*
-    Creator: James Sangalli
+/* 
     Purpose: the purpose of this contract is to create an incentive for machine
     learning models to produce the correct known but manually generated outputs.
 
@@ -8,7 +7,7 @@
     someone who generates a correct output can claim the ether and has proven their 
     model works.
 
-    Note: this is just a fun thought experiment.
+     
 
     Example: classify the data appropriately, have a large dataset with the correct answers stored privately and hashed.
     Model that successfully classifies the data will produce the correct hash and be able to take the prize.
