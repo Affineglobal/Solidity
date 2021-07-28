@@ -1,5 +1,6 @@
 <application>
   <component name="SonarLintGlobalSettings">
+    <option name="nodejsPath" value="C:\Users\PeterClarke\node_modules\nodejs\package.json" />
     <rules />
   </component>
 </application>
